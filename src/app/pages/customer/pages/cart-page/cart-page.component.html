@@ -1,0 +1,21 @@
+<div class="container">
+  <h1 class="empty-cart-text" *ngIf="!products?.length">Oh no! There are no sneakers added to the cart.</h1>
+
+  <div class="cart-products-wrapper">
+    <app-cart-product *ngFor="let product of products" [product]="product"></app-cart-product>
+  </div>
+
+  <div class="total-order-wrapper">
+    <p class="total-order">Total Order: ${{ totalPrice }}</p>
+  </div>
+
+  <button *ngIf="!account; else elseBlock" mat-flat-button class="button-style black-button" routerLink="/auth/login">
+    You must be logged in to purchase.
+  </button>
+
+  <ng-template #elseBlock>
+    <div class="order-component">
+      <app-order-form [totalPrice]="totalPrice"></app-order-form>
+    </div>
+  </ng-template>
+</div>

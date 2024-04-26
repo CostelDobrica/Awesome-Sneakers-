@@ -1,0 +1,53 @@
+.wrapper {
+  background-color: #f8f8f8;
+  width: 382px;
+  height: 190px;
+  border-radius: 10px;
+}
+
+.button {
+  display: flex;
+  width: 105px;
+  height: 35px;
+  justify-content: center;
+}
+
+.reject-button {
+  background-color: #ed5e68;
+}
+
+.details-wrapper {
+  display: flex;
+  flex-direction: column;
+  margin-left: 29px;
+  gap: 25px;
+}
+
+.border0 {
+  border: 0px;
+  margin: 0px;
+}
+
+h1 {
+  font-weight: 700;
+  font-size: 20px;
+}
+
+h2 {
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.buttons-wrapper {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-right: 29px;
+  gap: 5px;
+}

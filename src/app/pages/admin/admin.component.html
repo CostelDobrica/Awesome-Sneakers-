@@ -1,0 +1,16 @@
+<nav class="navbar">
+  <div class="container">
+    <div class="admin-menu">
+      <ul class="menu-list">
+        <li routerLink="/admin/categories" routerLinkActive="active-element" class="list-element">Categories</li>
+        <li routerLink="/admin/products" routerLinkActive="active-element" class="list-element">Products</li>
+        <li routerLink="/admin/orders" routerLinkActive="active-element" class="list-element">Orders</li>
+      </ul>
+    </div>
+    <div class="menu">
+      <app-account-menu class="account-menu"></app-account-menu>
+    </div>
+  </div>
+</nav>
+
+<router-outlet></router-outlet>

@@ -1,0 +1,17 @@
+<div class="container">
+  <app-search-bar (searchTextChanged)="onSearchById($event)"></app-search-bar>
+
+  <div class="results-add-button-wrapper">
+    <p [ngClass]="{ hidden: !searchText }">
+      Search result for <strong>{{ searchText }}</strong>
+    </p>
+
+    <button mat-flat-button class="button-style black-button button-144px" type="button" (click)="addOrder()">
+      Add
+    </button>
+  </div>
+
+  <div class="orders-wrapper">
+    <app-order *ngFor="let order of filteredOrderList" [order]="order"> </app-order>
+  </div>
+</div>

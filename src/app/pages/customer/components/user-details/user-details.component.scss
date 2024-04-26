@@ -1,0 +1,35 @@
+.form-style {
+  display: flex;
+  flex-direction: column;
+  margin-top: 50px;
+  width: 100%;
+  margin-bottom: 300px;
+}
+
+.fields-group {
+  display: flex;
+  gap: 33px;
+  width: 1222px;
+}
+
+.form-x2 {
+  width: 705px;
+}
+
+.form-title {
+  width: 587px;
+  font-weight: 700;
+  font-size: 32px;
+  color: #393d45;
+  margin-top: 50px;
+}
+
+.button-style {
+  font-weight: 700;
+  font-size: 20px;
+  align-self: center;
+  margin-top: 87px;
+  width: 341px;
+  height: 50px;
+  align-self: flex-end;
+}

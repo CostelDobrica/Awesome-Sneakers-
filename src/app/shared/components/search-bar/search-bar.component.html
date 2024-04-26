@@ -1,0 +1,5 @@
+<mat-form-field appearance="fill" class="search-bar-wrapper">
+  <mat-label class="search-label">Search</mat-label>
+  <input type="search" matInput ngModel (ngModelChange)="onSearch($event)" maxlength="30"/>
+  <mat-icon matSuffix class="search-icon">search</mat-icon>
+</mat-form-field>

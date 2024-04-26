@@ -1,0 +1,29 @@
+.container {
+  display: flex;
+}
+
+.form-fields {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.form-group {
+  display: flex;
+  gap: 40px;
+}
+
+.form-x2 {
+  width: 712px;
+}
+
+.form-container {
+  margin-top: 50px;
+  margin-bottom: 140px;
+}
+
+.button-style {
+  align-self: flex-end;
+  width: 178px;
+  height: 50px;
+}

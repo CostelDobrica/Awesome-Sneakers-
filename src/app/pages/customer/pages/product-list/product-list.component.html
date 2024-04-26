@@ -1,0 +1,11 @@
+<div class="container">
+  <app-search-bar (searchTextChanged)="onSearchByName($event)"></app-search-bar>
+
+  <p [ngClass]="{ hidden: !searchText }">
+    Search result for <strong>{{ searchText }}</strong>
+  </p>
+
+  <div class="products-wrapper">
+    <app-product *ngFor="let product of filteredProductList" [product]="product"></app-product>
+  </div>
+</div>

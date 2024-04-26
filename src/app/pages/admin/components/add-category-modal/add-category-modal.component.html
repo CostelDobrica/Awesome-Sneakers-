@@ -1,0 +1,21 @@
+<form class="form-group" (ngSubmit)="onAdd()" [formGroup]="addCategoryForm">
+  <h1 class="title">Add Category</h1>
+
+  <mat-form-field appearance="fill" class="form-field">
+    <mat-label>Name</mat-label>
+    <input type="text" matInput formControlName="name" maxlength="30" />
+    <mat-error *ngIf="addCategoryForm.controls['name'].hasError('required')"> Name is required </mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill" class="form-field image-field">
+    <mat-label>Image</mat-label>
+    <mat-icon matSuffix class="upload-icon">upload_file</mat-icon>
+    <input type="file" (change)="onChangeImage($event.target)" class="file-input" />
+    <input type="text" matInput formControlName="categoryImage" readonly="true" class="backgroud-input" />
+    <mat-error *ngIf="addCategoryForm.controls['categoryImage'].hasError('required')"> Image is required </mat-error>
+  </mat-form-field>
+
+  <div class="button-wrapper">
+    <button mat-flat-button class="black-button button" [disabled]="addCategoryForm.invalid">Save</button>
+  </div>
+</form>

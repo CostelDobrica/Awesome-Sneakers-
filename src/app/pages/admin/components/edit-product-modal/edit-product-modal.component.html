@@ -1,0 +1,58 @@
+<form [formGroup]="editProductForm" mat-dialog-content class="form-style" (ngSubmit)="onEdit()">
+  <h1 mat-dialog-title class="title-dialog">Edit Product</h1>
+
+  <mat-form-field appearance="fill" class="form-field">
+    <mat-label class="label-style">Name</mat-label>
+    <input type="text" matInput formControlName="name" />
+    <mat-error *ngIf="editProductForm.controls['name'].hasError('required')">Name is required</mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill" class="form-field">
+    <mat-label class="label-style">Category</mat-label>
+    <mat-select formControlName="categoryId">
+      <mat-option *ngFor="let category of categories" [value]="category._id">
+        {{ category.name }}
+      </mat-option>
+    </mat-select>
+    <mat-error *ngIf="editProductForm.controls['categoryId'].hasError('required')">Category is required</mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill" class="form-field">
+    <mat-label class="label-style">Description</mat-label>
+    <textarea type="text" matInput formControlName="description"></textarea>
+    <mat-error *ngIf="editProductForm.controls['description'].hasError('required')">Description is required</mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill" class="form-field image-field">
+    <mat-label class="label-style">Image</mat-label>
+    <mat-icon matSuffix class="upload-icon">upload_file</mat-icon>
+    <input type="file" (change)="onChangeImage($event.target)" class="file-input" />
+    <input type="text" readonly="true" matInput formControlName="productImage" />
+    <mat-error *ngIf="editProductForm.controls['productImage'].hasError('required')">Image is required</mat-error>
+  </mat-form-field>
+
+  <div class="fields-wrapper">
+    <mat-form-field appearance="fill" class="form-half-field">
+      <mat-label class="label-style">Price</mat-label>
+      <input type="number" matInput formControlName="price" min="0" />
+      <mat-error *ngIf="editProductForm.controls['price'].hasError('required')">Price is required</mat-error>
+      <mat-error *ngIf="editProductForm.controls['price'].hasError('min')">Price must be a positive number</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="form-half-field">
+      <mat-label class="label-style">Quantity</mat-label>
+      <input type="number" matInput formControlName="quantity" min="0" />
+      <mat-error *ngIf="editProductForm.controls['quantity'].hasError('required')">Quantity is required</mat-error>
+      <mat-error *ngIf="editProductForm.controls['quantity'].hasError('min')"
+        >Quantity must be a positive number</mat-error
+      >
+    </mat-form-field>
+  </div>
+
+  <div mat-dialog-actions class="dialog-buttons">
+    <button type="button" class="black-button button-style" mat-flat-button (click)="onDelete()">Delete</button>
+    <button type="submit" class="black-button button-style" mat-flat-button [disabled]="editProductForm.invalid">
+      Save
+    </button>
+  </div>
+</form>

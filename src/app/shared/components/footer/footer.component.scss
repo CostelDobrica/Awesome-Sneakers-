@@ -1,0 +1,36 @@
+.footer {
+  background-color: #484543;
+  height: 120px;
+  width: 100%;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  justify-content: space-between;
+}
+
+.credential {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-title {
+  font-weight: 700;
+  font-size: 30px;
+  color: #ffffff;
+  margin-bottom: 0;
+}
+
+.copyright-year {
+  font-weight: 400;
+  font-size: 18px;
+  color: #ffffff;
+  margin-bottom: 0;
+}
+
+:host {
+  display: block;
+  margin-top: auto;
+}

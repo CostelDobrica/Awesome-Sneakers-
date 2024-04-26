@@ -1,0 +1,64 @@
+<div class="form-container">
+  <form [formGroup]="orderForm" (ngSubmit)="createOrder()" class="form-fields">
+    <div class="form-group">
+      <mat-form-field appearance="fill" class="field-style">
+        <mat-label>First Name</mat-label>
+        <input type="text" matInput formControlName="firstName" maxlength="30" readonly />
+        <mat-error *ngIf="orderForm.controls['firstName'].hasError('required')"> First name is required </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" class="field-style">
+        <mat-label>Last Name</mat-label>
+        <input type="text" matInput formControlName="lastName" maxlength="30" readonly />
+        <mat-error *ngIf="orderForm.controls['lastName'].hasError('required')"> Last name is required </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" class="field-style">
+        <mat-label>Phone</mat-label>
+        <input type="text" matInput formControlName="phone" maxlength="10" minlength="10" />
+        <mat-error *ngIf="orderForm.controls['phone'].hasError('pattern')"> Phone must be valid </mat-error>
+        <mat-error *ngIf="orderForm.controls['phone'].hasError('required')"> Phone is required </mat-error>
+      </mat-form-field>
+    </div>
+
+    <div class="form-group">
+      <mat-form-field appearance="fill" class="field-style">
+        <mat-label>Country</mat-label>
+        <input type="text" matInput formControlName="country" maxlength="100" />
+        <mat-error *ngIf="orderForm.controls['country'].hasError('required')"> Country is required </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" class="field-shipping-addres form-x2 form-field-100">
+        <mat-label>Shipping Address</mat-label>
+        <input type="text" matInput formControlName="shippingAddress" maxlength="200" />
+        <mat-error *ngIf="orderForm.controls['shippingAddress'].hasError('required')">
+          Shipping Address is required
+        </mat-error>
+      </mat-form-field>
+    </div>
+
+    <div class="form-group">
+      <mat-form-field appearance="fill" class="field-style">
+        <mat-label>City</mat-label>
+        <input type="text" matInput formControlName="city" maxlength="100" />
+        <mat-error *ngIf="orderForm.controls['city'].hasError('required')"> City is required </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" class="field-style">
+        <mat-label>Zip</mat-label>
+        <input type="text" matInput formControlName="zip" maxlength="6" minlength="6" />
+        <mat-error *ngIf="orderForm.controls['zip'].hasError('required')"> Zip is required </mat-error>
+        <mat-error *ngIf="orderForm.controls['zip'].hasError('minlength')"> Zip must be valid </mat-error>
+      </mat-form-field>
+    </div>
+
+    <button
+      mat-flat-button
+      class="button-style black-button"
+      type="submit"
+      [disabled]="orderForm.invalid || totalPrice === 0"
+    >
+      Order
+    </button>
+  </form>
+</div>

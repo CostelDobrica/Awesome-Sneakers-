@@ -1,0 +1,23 @@
+<form [formGroup]="editCredentials" (ngSubmit)="onEdit()" mat-dialog-content class="form-style">
+  <h1 mat-dialog-title class="title-dialog">Edit Category</h1>
+  <mat-form-field appearance="fill" class="form-field">
+    <mat-label class="label-style">Name</mat-label>
+    <input type="text" matInput formControlName="name" maxlength="30" />
+    <mat-error *ngIf="editCredentials.controls['name'].hasError('required')">Name is required</mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill" class="form-field image-field">
+    <mat-label class="label-style">Image</mat-label>
+    <mat-icon matSuffix class="upload-icon">upload_file</mat-icon>
+    <input type="file" (change)="onChangeImage($event.target)" class="file-input" />
+    <input type="text" readonly="true" matInput formControlName="categoryImage" />
+    <mat-error *ngIf="editCredentials.controls['categoryImage'].hasError('required')">Image is required</mat-error>
+  </mat-form-field>
+
+  <div mat-dialog-actions class="dialog-buttons">
+    <button type="button" class="black-button button-style" mat-flat-button (click)="onDelete()">Delete</button>
+    <button type="submit" class="black-button button-style" mat-flat-button [disabled]="editCredentials.controls['name'].invalid">
+      Save
+    </button>
+  </div>
+</form>

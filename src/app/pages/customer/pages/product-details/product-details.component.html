@@ -1,0 +1,25 @@
+<div class="container">
+  <img [src]="product?.productImage" alt="" class="product-image" />
+
+  <div class="wrapper-details">
+    <h1 class="product-title">{{ product?.name }}</h1>
+
+    <p class="product-description">Product description - {{ product?.description }}</p>
+    <p class="product-category">Category: {{ product?.category?.name }}</p>
+    <p class="product-stock stock-price">Stock : {{ product?.quantity }}</p>
+    <p class="price-title stock-price">Price :</p>
+    <p class="price">{{ product?.price | currency: 'USD':'symbol':'0.0-0' }}</p>
+
+    <div class="cart-credentials">
+      <div class="ammount">
+        <button class="amount-element" (click)="onDecrement()">-</button>
+        <div class="amount-element">{{ amount }}</div>
+        <button class="amount-element" (click)="onIncrement()">+</button>
+      </div>
+
+      <button mat-flat-button class="button-style black-button" (click)="onAddCart()" [disabled]="!amount">
+        Add to cart
+      </button>
+    </div>
+  </div>
+</div>

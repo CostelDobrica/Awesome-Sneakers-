@@ -1,0 +1,53 @@
+/* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, 'Helvetica Neue', sans-serif;
+}
+
+.container {
+  max-width: 1260px;
+  margin: 0 auto;
+}
+
+.field-style {
+  width: 336px;
+  height: 60px;
+  margin-bottom: 30px;
+}
+
+.black-button[mat-flat-button] {
+  border-radius: 10px;
+  background: #211f1c;
+  color: #fbfbfb;
+}
+
+.hidden{
+  visibility: hidden;
+}
+
+.image-field {
+  position: relative;
+
+  .file-input {
+    position: absolute;
+    width: 342px;
+    height: 52px;
+    top: -20px;
+    left: -10px;
+    opacity: 0;
+    z-index: 2;
+  }
+
+  .upload-icon {
+    height: 33px;
+    width: 26px;
+    font-size: 33px;
+    padding: 0 15px;
+    color: #484543;
+  }
+}

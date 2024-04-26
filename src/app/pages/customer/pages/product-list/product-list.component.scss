@@ -1,0 +1,15 @@
+.container {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-bottom: 136px;
+}
+
+.products-wrapper {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  margin-top: 37px;
+  gap: 44px;
+}

@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="login-wrapper">
+    <div class="image-wrapper"></div>
+
+    <div class="form-wrapper">
+      <h2 class="form-title">Login</h2>
+
+      <form [formGroup]="profileForm" (ngSubmit)="login()" class="form-style">
+        <mat-form-field appearance="fill" class="field-style">
+          <mat-label>Email</mat-label>
+          <input type="email" matInput formControlName="email" />
+          <mat-icon matSuffix class="icon">person_outlined</mat-icon>
+          <mat-error
+            *ngIf="
+              profileForm.controls['email'].hasError('email') && !profileForm.controls['email'].hasError('required')
+            "
+          >
+            Please enter a valid email address
+          </mat-error>
+          <mat-error *ngIf="profileForm.controls['email'].hasError('required')"> Email is required </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="field-style">
+          <mat-label>Password</mat-label>
+          <input type="password" matInput formControlName="password" />
+          <mat-icon matSuffix class="icon">lock_outlined</mat-icon>
+          <mat-error *ngIf="profileForm.controls['password'].hasError('required')"> Password is required </mat-error>
+        </mat-form-field>
+
+        <button mat-flat-button class="button-style black-button" type="submit" [disabled]="!profileForm.valid">
+          Let's go
+        </button>
+      </form>
+
+      <span>Don't have an account? <a routerLink="/auth/register">Sign up</a></span>
+    </div>
+  </div>
+</div>

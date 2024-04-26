@@ -1,0 +1,17 @@
+<div class="product-wrapper">
+  <div class="image-options-wrapper" (click)="goToProductDetails()">
+    <img [src]="product.productImage" class="image-style"/>
+    <div class="options-wrapper">
+      <button type="button" class="go-to-details">Details</button>
+
+      <div class="cart-wrapper" (click)="addToCart($event)">
+        <mat-icon matSuffix fontSet="material-icons-outlined">shopping_cart</mat-icon>
+      </div>
+    </div>
+  </div>
+
+  <div class="details-wrapper">
+    <p class="product-name">{{ product.name }}</p>
+    <p class="product-price">${{ product.price }}</p>
+  </div>
+</div>

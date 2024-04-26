@@ -1,0 +1,21 @@
+<div class="top-bgcolor">
+  <div class="container top-container">
+    <div class="details-container">
+      <h1 class="title">The best sneakers at great prices</h1>
+      <p class="details">
+        Buying sneakers can be a difficult thing, even for the most ardent sneakerheads out there. But fret not,
+        friends. All hope is not lost. We are here to help you find those shoes you’ve been wanting.
+      </p>
+    </div>
+    <div class="image-wrapper"></div>
+  </div>
+</div>
+
+<div class="bottom-bgcolor">
+  <div class="bottom-container container">
+    <h2 class="category-title">Categories</h2>
+    <div class="cards-wrapper">
+      <app-category *ngFor="let category of categories" [category]="category"></app-category>
+    </div>
+  </div>
+</div>

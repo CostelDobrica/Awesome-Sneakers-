@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="account-container">
+    <div class="profile-container" *ngIf="account; else elseBlock">
+      <button mat-button [matMenuTriggerFor]="menu">
+        <mat-icon matSuffix fontSet="material-icons-outlined" class="profile-icon">account_circle</mat-icon>
+        <span class="profile-name">{{ account.firstName }} {{ account.lastName }}</span>
+      </button>
+
+      <mat-menu #menu="matMenu" xPosition="before">
+        <button mat-menu-item *ngIf="!account.isAdmin" routerLink="/home/user">Account</button>
+        <button mat-menu-item (click)="logout()">Logout</button>
+      </mat-menu>
+    </div>
+
+    <ng-template #elseBlock>
+      <button mat-flat-button class="button-style black-button" routerLink="/auth/login">Login</button>
+    </ng-template>
+  </div>
+</div>

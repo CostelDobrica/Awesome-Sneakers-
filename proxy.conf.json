@@ -1,0 +1,11 @@
+{
+  "/api": {
+    "target": "https://awesome-shop.herokuapp.com",
+    "secure": true,
+    "changeOrigin":true,
+    "logLevel": "info",
+    "pathRewrite":{
+      "/api": "/api/v1"
+    }
+  }
+}

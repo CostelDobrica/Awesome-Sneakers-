@@ -1,0 +1,21 @@
+<div class="cart-product-wrapper">
+  <div class="image-name-wrapper">
+    <img class="image" [src]="product.productImage" />
+    <p class="name">{{ product.name }}</p>
+  </div>
+
+  <p class="price">${{ product.price }}</p>
+
+  <input
+    class="quantity quantity-wrapper"
+    type="number"
+    [ngModel]="quantityProductOnCart"
+    (ngModelChange)="onEdit($event)"
+    min="1"
+    [max]="product.quantity"
+  />
+
+  <div class="delete-icon-wrapper" (click)="delete()">
+    <span class="material-icons"> delete_outline </span>
+  </div>
+</div>

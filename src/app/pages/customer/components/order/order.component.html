@@ -1,0 +1,55 @@
+<div class="order-wrapper">
+  <div>
+    <h3 class="order-status margin-0">{{ order?.status }}</h3>
+
+    <h3 class="order-details margin-0">Address</h3>
+    <p class="margin-0">
+      {{ order?.shippingAddress }}, {{ order?.country }}, {{ order?.city }}, {{ order?.zip }}, {{ order?.phone }}
+    </p>
+
+    <h3 class="order-details margin-0">Total</h3>
+    <p class="margin-0">${{ order.totalPrice }}</p>
+  </div>
+
+  <div class="order-items-wrapper">
+    <div class="all-items-wrapper">
+      <div class="collapsed-items-products-images-wrapper">
+        <div *ngFor="let product of firstFourItems" class="product-image-quantity-wrapper">
+          <img
+            *ngIf="product.product"
+            [src]="product?.product?.productImage"
+            class="image-style"
+            (click)="goToProduct(product)"
+          />
+
+          <div *ngIf="product.product" class="product-quantity-style">
+            <span>{{ product?.quantity }}</span>
+          </div>
+
+          <div *ngIf="!product.product" class="alt-text"><span>Product no longer available.</span></div>
+        </div>
+
+        <ng-container *ngIf="display">
+          <div *ngFor="let product of moreThanFourItems" class="product-image-quantity-wrapper">
+            <img
+              *ngIf="product.product"
+              [src]="product?.product?.productImage"
+              class="image-style"
+              (click)="goToProduct(product)"
+            />
+            <div *ngIf="product.product" class="product-quantity-style">
+              <span>{{ product?.quantity }}</span>
+            </div>
+
+            <div *ngIf="!product.product" class="alt-text"><span>Product no longer available.</span></div>
+          </div>
+        </ng-container>
+      </div>
+
+      <div *ngIf="moreThanFourItems.length > 0" class="more-items-wrapper">
+        <span *ngIf="!display" (click)="expand()" class="more-items-expand">+{{ moreThanFourItems.length }}</span>
+        <mat-icon *ngIf="display" (click)="collapse()">expand_less</mat-icon>
+      </div>
+    </div>
+  </div>
+</div>

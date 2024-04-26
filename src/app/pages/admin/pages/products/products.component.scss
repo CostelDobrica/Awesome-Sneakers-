@@ -1,0 +1,25 @@
+.container {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-bottom: 136px;
+}
+
+.products-wrapper {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  margin-top: 30px;
+  gap: 44px;
+}
+
+.results-add-button-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.button-style {
+  width: 144px;
+  height: 35px;
+}
